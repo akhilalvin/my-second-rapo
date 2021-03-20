@@ -1,0 +1,337 @@
+LOOPS AND CONDITIONS
+
+package coreJava;
+
+public class whiledemo {
+
+public static void main(String[] args) {
+// TODO Auto-generated method stub
+
+//While loop
+
+//1 to 10
+int i=10;
+
+/* while(i>0)
+{
+System.out.println(i);
+i--;//i=2
+}
+}*/
+int j=20;
+do
+{
+System.out.println(j);
+j++;
+
+}while(j>30);// 1 loop of execution is guarantee
+
+}
+
+//
+
+}
+
+// For if loop
+
+
+
+package coreJava;
+
+public class forloopexample {
+
+public static void main(String[] args) {
+// TODO Auto-generated method stub
+
+// 1 to 10
+
+/* for(initization;condition;increment)
+{
+
+}*/
+/* if(5>2)
+{
+
+
+System.out.println("success");
+System.out.println("second step");
+}
+
+else
+
+System.out.println("fail");*/
+
+
+for(int i=0;i<10;i=i+3)
+{
+if(i==9)
+System.out.println(" 9 is displayed");
+else
+System.out.println("I didnot find");//
+}
+}
+
+}
+
+
+NESTED LOOPS
+
+package demopack;
+
+public class pb1 {
+
+public static void main(String[] args) {
+// TODO Auto-generated method stub
+//nested loops works -
+int k=1;
+for(int i=0;i<4;i++) //(outer for loop) this block will loop for 4 times
+{
+//System.out.println( "outer loop started");
+for(int j=1;j<=4-i;j++) // inner loop
+{
+System.out.print( k);
+System.out.print("\t");
+k++;
+}
+//System.out.println( "");
+}
+}
+
+}
+
+// Example on pyramid Triangle
+
+package demopack;
+
+public class loop2demo {
+
+public static void main(String[] args) {
+// TODO Auto-generated method stub
+//int k=1;
+for(int i=1;i<5;i++)
+{
+for(int j=1;j<=i;j++)
+{
+System.out.print(j);
+System.out.print("\t");
+//k++;
+}
+System.out.println("");
+
+}
+}
+
+}
+
+
+INTERFACES CODE AND IMPLEMENTATIONS INTO CLASS
+package coreJava;
+
+import demopack.CentralTraffic;
+
+public class AustralianTrafic implements CentralTraffic,ContinentalTraffic {
+
+public static void main(String[] args) {
+// TODO Auto-generated method stub
+CentralTraffic a= new AustralianTrafic();
+a.redStop();
+a.FlashYellow();
+a.greenGo();
+
+AustralianTrafic at=new AustralianTrafic();
+ContinentalTraffic ct=new AustralianTrafic();
+at.walkonsymbol();
+ct.Trainsymbol();
+
+
+}
+
+@Override
+public void redStop() {
+// TODO Auto-generated method stub
+System.out.println(" redstop implementation");
+}
+public void walkonsymbol()
+{
+System.out.println("walking");
+}
+@Override
+public void FlashYellow() {
+// TODO Auto-generated method stub
+System.out.println(" flash yellow implementation");
+//code
+}
+
+@Override
+public void greenGo() {
+// TODO Auto-generated method stub
+System.out.println(" Green go implementation");
+}
+
+@Override
+public void Trainsymbol() {
+// TODO Auto-generated method stub
+
+}
+
+}
+
+//CentralTraffic
+
+package demopack;
+
+public interface CentralTraffic {
+int a=4;//public
+public void greenGo();
+public void redStop();
+public void FlashYellow();
+
+
+}
+
+//ContinentalTraffic
+
+package coreJava;
+
+public interface ContinentalTraffic {
+
+public void Trainsymbol();
+}
+
+
+
+INHERITANCE CODE
+
+package coreJava;
+
+public class childDemo extends parentDemo{
+
+String name ="QAClickAcademy";
+
+
+public childDemo()
+{
+super();// this should be always be at first line
+System.out.println("child class construtor");
+
+}
+public void getStringdata()
+{
+System.out.println(name);
+System.out.println(super.name);
+}
+
+
+public void getData()
+{
+super.getData();
+System.out.println("I am in child class");
+}
+public static void main(String[] args) {
+// TODO Auto-generated method stub
+
+
+
+childDemo cd = new childDemo();
+
+cd.getStringdata();
+cd.getData();
+}
+
+}
+
+// ParentDemo.js
+
+package coreJava;
+
+public class parentDemo {
+
+String name= "Rahul";
+
+public parentDemo()
+{
+System.out.println("Parent class construtor");
+
+}
+public void getData()
+{
+System.out.println(" I am parent class");
+}
+
+public static void main(String[] args) {
+// TODO Auto-generated method stub
+
+}
+
+}
+
+FUNCTION OVERLOADING
+
+package coreJava;
+//function overloading
+//either argument count should be different or
+//argument data type should be different
+public class childlevel extends childClassDemo {
+
+public void getData(int a)
+{
+System.out.println(a);
+}
+public void getData(String a)
+{
+System.out.println(a);
+}
+public void getData(int a,int b)
+{
+System.out.println(b);
+}
+public static void main(String[] args) {
+// TODO Auto-generated method stub
+
+childlevel cl=new childlevel();
+cl.getData(2);
+cl.getData("hello");
+cl.getData(2, 5);
+
+}
+
+}
+
+.. ChildDemo.java
+
+package coreJava;
+
+public class childDemo extends parentDemo{
+
+String name ="QAClickAcademy";
+
+
+public childDemo()
+{
+super();// this should be always be at first line
+System.out.println("child class construtor");
+
+}
+public void getStringdata()
+{
+System.out.println(name);
+System.out.println(super.name);
+}
+
+
+public void getData()
+{
+super.getData();
+System.out.println("I am in child class");
+}
+public static void main(String[] args) {
+// TODO Auto-generated method stub
+
+childDemo cd = new childDemo();
+
+cd.getStringdata();
+cd.getData();
+}
+
+}
+
